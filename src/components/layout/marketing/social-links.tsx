@@ -55,9 +55,12 @@ export default function SocialLinks() {
         <div className="relative">
           {/* floating coins (CSS shapes) */}
           <Coin className="left-[48%] top-6 scale-90" tone="amber" label="G" />
-          <Coin className="left-[62%] top-36 scale-110" tone="emerald" label="S" />
-          <Coin className="left-[10%] top-[70%] scale-110 rotate-12" tone="emerald" label="S" />
-          <Coin className="left-[60%] top-[78%] scale-[1.8] -rotate-12" tone="amber" label="G" />
+
+          <Coin
+            className="left-[60%] top-[78%] scale-[1.8] -rotate-12 mt-16"
+            tone="amber"
+            label="G"
+          />
 
           <h2 className="text-5xl font-semibold leading-tight text-foreground">
             Follow Us on <br />

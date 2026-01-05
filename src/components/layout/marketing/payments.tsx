@@ -4,30 +4,29 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
+import CASION_DEPOSIT from "../../../../public/assets/SVGs/casino.svg";
+import REDEEM from "../../../../public/assets/SVGs/redeem.svg";
+
 const payments = [
   {
     key: "deposit",
     title: "Deposit",
-    desc:
-      "Thousands of Casino Games — Slots,\nFish Tables, Keno, Bingo, Live Dealers\n& More — with 96% RTP!",
+    desc: "Thousands of Casino Games — Slots,\nFish Tables, Keno, Bingo, Live Dealers\n& More — with 96% RTP!",
     coin: "G",
     coinRing: "from-amber-300 to-amber-500",
     titleColor: "text-amber-400 dark:text-amber-300",
-    glow:
-      "bg-[radial-gradient(circle_at_15%_35%,rgba(245,158,11,0.35),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.06),transparent_60%)]",
-    image: "/images/payments/deposit.png",
+    glow: "bg-[radial-gradient(circle_at_15%_35%,rgba(245,158,11,0.35),transparent_55%),radial-gradient(circle_at_70%_55%,rgba(255,255,255,0.06),transparent_60%)]",
+    image: CASION_DEPOSIT,
   },
   {
     key: "redeem",
     title: "Reedem", // keep spelling exactly like screenshot; change to "Redeem" if you want
-    desc:
-      "Thousands of Casino Games — Slots,\nFish Tables, Keno, Bingo, Live Dealers\n& More — with 96% RTP!",
+    desc: "Thousands of Casino Games — Slots,\nFish Tables, Keno, Bingo, Live Dealers\n& More — with 96% RTP!",
     coin: "S",
     coinRing: "from-emerald-400 to-emerald-600",
     titleColor: "text-emerald-400 dark:text-emerald-300",
-    glow:
-      "bg-[radial-gradient(circle_at_85%_35%,rgba(16,185,129,0.35),transparent_55%),radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.06),transparent_60%)]",
-    image: "/images/payments/redeem.png",
+    glow: "bg-[radial-gradient(circle_at_85%_35%,rgba(16,185,129,0.35),transparent_55%),radial-gradient(circle_at_30%_70%,rgba(255,255,255,0.06),transparent_60%)]",
+    image: REDEEM,
   },
 ];
 
@@ -35,13 +34,14 @@ export default function Payments() {
   return (
     <section className="relative py-10">
       {/* background like screenshot */}
-    
 
       {/* Title */}
       <div className="text-center">
         <h2 className="text-4xl font-semibold tracking-tight text-foreground">
           Play for Fun or{" "}
-          <span className="text-amber-400 dark:text-amber-300">Real Prizes</span>
+          <span className="text-amber-400 dark:text-amber-300">
+            Real Prizes
+          </span>
         </h2>
       </div>
 
@@ -57,7 +57,9 @@ export default function Payments() {
             )}
           >
             {/* inner glow */}
-            <div className={cn("pointer-events-none absolute inset-0", p.glow)} />
+            <div
+              className={cn("pointer-events-none absolute inset-0", p.glow)}
+            />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/25 dark:to-black/45" />
 
             {/* big coin top-left */}
@@ -89,7 +91,7 @@ export default function Payments() {
                 </div>
 
                 {/* right image */}
-                <div className="relative mx-auto h-[230px] w-full max-w-[420px]">
+                <div className="relative mx-auto h-[430px] w-full max-w-[420px]">
                   <Image
                     src={p.image}
                     alt={p.title}

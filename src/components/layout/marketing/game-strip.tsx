@@ -7,6 +7,11 @@ import SectionTitle from "@/components/layout/marketing/site-title";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+import VBLINK from "../../../../public/assets/SVGs/vblink.svg";
+import FIRE_KIRIN from "../../../../public/assets/SVGs/fire_kirin.svg";
+import ULTRA_PANDA from "../../../../public/assets/SVGs/ultra_panda.svg";
+import FORTUNE_KINGS from "../../../../public/assets/SVGs/fortune_kings.svg";
+
 type Game = {
   name: string;
   src: string;
@@ -14,10 +19,10 @@ type Game = {
 };
 
 const games: Game[] = [
-  { name: "VBlink", src: "/images/games/vblink.png" },
-  { name: "Fire Kirin", src: "/images/games/fire-kirin.png" },
-  { name: "Ultra Panda", src: "/images/games/ultra-panda.png" },
-  { name: "Fortune Kings", src: "/images/games/fortune-kings.png" },
+  { name: "VBlink", src: VBLINK },
+  { name: "Fire Kirin", src: FIRE_KIRIN },
+  { name: "Ultra Panda", src: ULTRA_PANDA },
+  { name: "Fortune Kings", src: FORTUNE_KINGS },
 ];
 
 export default function GameStrip() {
@@ -27,14 +32,20 @@ export default function GameStrip() {
     const el = scrollerRef.current;
     if (!el) return;
     const amount = Math.round(el.clientWidth * 0.6);
-    el.scrollBy({ left: dir === "left" ? -amount : amount, behavior: "smooth" });
+    el.scrollBy({
+      left: dir === "left" ? -amount : amount,
+      behavior: "smooth",
+    });
   };
 
   return (
     <section>
       {/* If you only want the logos like screenshot, delete this title block */}
       <div className="mb-6">
-        <SectionTitle title="Top Games" subtitle="Trending picks players love" />
+        <SectionTitle
+          title="Top Games"
+          subtitle="Trending picks players love"
+        />
       </div>
 
       <div
@@ -85,7 +96,7 @@ export default function GameStrip() {
         <div
           ref={scrollerRef}
           className={cn(
-            "relative flex items-center gap-10 px-16 py-10",
+            "relative flex w-full items-center gap-10 px-16 py-10",
             "overflow-x-auto scroll-smooth",
             "[scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
           )}
@@ -99,13 +110,13 @@ export default function GameStrip() {
                 "w-[220px] sm:w-[260px] md:w-[280px] lg:w-[300px]"
               )}
             >
-              <div className="relative mx-auto h-[140px] w-full">
+              <div className="relative mx-auto h-[230px] w-full">
                 <Image
                   src={g.src}
                   alt={g.alt ?? g.name}
                   fill
                   priority={false}
-                  className="object-contain drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)]"
+                  className="object-cover drop-shadow-[0_25px_35px_rgba(0,0,0,0.45)]"
                 />
               </div>
             </div>

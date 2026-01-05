@@ -1,7 +1,13 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { ArrowRight, Coins, Gamepad2, Gift, Layers3, Zap } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Icon_1 from "../../../../public/assets/SVGs/dashboard.svg";
+import Icon_2 from "../../../../public/assets/SVGs/hacksaw.svg";
+import Icon_3 from "../../../../public/assets/SVGs/fish.svg";
+import Icon_4 from "../../../../public/assets/SVGs/ball.svg";
+import Icon_5 from "../../../../public/assets/SVGs/player.svg";
+import Image from "next/image";
 
 type FeatureItem = {
   key: string;
@@ -9,8 +15,12 @@ type FeatureItem = {
   desc: string;
   cta: string;
   pill: string;
-  icon: React.ElementType;
   accent: "green" | "yellow" | "purple";
+
+  image: {
+    src: string;
+    alt: string;
+  };
 };
 
 const items: FeatureItem[] = [
@@ -20,8 +30,11 @@ const items: FeatureItem[] = [
     desc: "Thousands of Casino Games — Slots, Fish Tables,\nKeno, Bingo, Live Dealers & More — with 96% RTP!",
     cta: "Go To Games",
     pill: "5,000+ Games",
-    icon: Coins,
     accent: "green",
+    image: {
+      src: Icon_1,
+      alt: "Dashboard preview",
+    },
   },
   {
     key: "hacksaw",
@@ -29,8 +42,11 @@ const items: FeatureItem[] = [
     desc: "Exclusive Access to 20+ Connected\nPlatforms in One Login — Automatic\nSC Top-Up & Instant Redeem.",
     cta: "Go To Games",
     pill: "20+ App",
-    icon: Zap,
     accent: "green",
+    image: {
+      src: Icon_2,
+      alt: "Hacksaw preview",
+    },
   },
   {
     key: "games",
@@ -38,8 +54,11 @@ const items: FeatureItem[] = [
     desc: "Exclusive Access to 20+ Connected\nPlatforms in One Login — Automatic\nSC Top-Up & Instant Redeem.",
     cta: "Go To Games",
     pill: "20+ App",
-    icon: Gamepad2,
     accent: "yellow",
+    image: {
+      src: Icon_3,
+      alt: "Games preview",
+    },
   },
   {
     key: "platforms",
@@ -47,8 +66,11 @@ const items: FeatureItem[] = [
     desc: "Exclusive Access to 20+ Connected\nPlatforms in One Login — Automatic\nSC Top-Up & Instant Redeem.",
     cta: "Go To Games",
     pill: "20+ App",
-    icon: Layers3,
     accent: "green",
+    image: {
+      src: Icon_4,
+      alt: "Platforms preview",
+    },
   },
   {
     key: "prizes",
@@ -56,8 +78,11 @@ const items: FeatureItem[] = [
     desc: "Exclusive Access to 20+ Connected\nPlatforms in One Login — Automatic\nSC Top-Up & Instant Redeem.",
     cta: "Go To Games",
     pill: "20+ App",
-    icon: Gift,
     accent: "yellow",
+    image: {
+      src: Icon_5,
+      alt: "Prizes preview",
+    },
   },
 ];
 
@@ -68,16 +93,14 @@ function accentClasses(accent: FeatureItem["accent"]) {
         pill: "bg-emerald-500 text-black hover:bg-emerald-400",
         icon: "text-emerald-500 dark:text-emerald-300",
         link: "text-emerald-600 dark:text-emerald-300",
-        glow:
-          "bg-[radial-gradient(circle_at_35%_15%,rgba(16,185,129,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(34,197,94,0.14),transparent_55%)]",
+        glow: "bg-[radial-gradient(circle_at_35%_15%,rgba(16,185,129,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(34,197,94,0.14),transparent_55%)]",
       };
     case "yellow":
       return {
         pill: "bg-amber-400 text-black hover:bg-amber-300",
         icon: "text-amber-600 dark:text-amber-300",
         link: "text-emerald-600 dark:text-emerald-300",
-        glow:
-          "bg-[radial-gradient(circle_at_35%_15%,rgba(251,191,36,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(245,158,11,0.14),transparent_55%)]",
+        glow: "bg-[radial-gradient(circle_at_35%_15%,rgba(251,191,36,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(245,158,11,0.14),transparent_55%)]",
       };
     case "purple":
     default:
@@ -85,8 +108,7 @@ function accentClasses(accent: FeatureItem["accent"]) {
         pill: "bg-violet-500 text-white hover:bg-violet-400",
         icon: "text-violet-500 dark:text-violet-300",
         link: "text-emerald-600 dark:text-emerald-300",
-        glow:
-          "bg-[radial-gradient(circle_at_35%_15%,rgba(139,92,246,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.14),transparent_55%)]",
+        glow: "bg-[radial-gradient(circle_at_35%_15%,rgba(139,92,246,0.22),transparent_55%),radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.14),transparent_55%)]",
       };
   }
 }
@@ -112,22 +134,35 @@ function GlassCard({
       )}
     >
       {/* glow */}
-      <div className={cn("pointer-events-none absolute inset-0 opacity-90", a.glow)} />
+      <div
+        className={cn(
+          "pointer-events-none absolute inset-0 opacity-90",
+          a.glow
+        )}
+      />
       {/* vignette for depth */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/10 dark:to-black/35" />
 
-      <CardContent className={cn("relative h-full", size === "large" ? "p-8" : "p-6")}>
+      <CardContent
+        className={cn("relative h-full", size === "large" ? "p-8" : "p-6")}
+      >
         {/* top row */}
         <div className="flex items-start justify-between gap-3">
-          <div className="flex items-start gap-3">
+          <div className="flex-col items-center gap-3">
             <div
               className={cn(
-                "grid place-items-center rounded-2xl border border-border bg-muted/35",
-                "dark:bg-white/10",
-                size === "large" ? "h-12 w-12" : "h-10 w-10"
+                "relative overflow-hidden ",
+                size === "large" ? "h-42 w-42" : "h-12 w-12"
               )}
             >
-              <item.icon className={cn(size === "large" ? "h-6 w-6" : "h-5 w-5", a.icon)} />
+              <Image
+                width={140}
+                height={100}
+                src={item.image.src}
+                alt={item.image.alt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
             </div>
 
             <div>
@@ -142,7 +177,12 @@ function GlassCard({
             </div>
           </div>
 
-          <Badge className={cn("rounded-full px-4 py-2 text-sm font-semibold", a.pill)}>
+          <Badge
+            className={cn(
+              "rounded-full px-4 py-2 text-sm font-semibold",
+              a.pill
+            )}
+          >
             {item.pill}
           </Badge>
         </div>

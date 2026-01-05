@@ -4,6 +4,8 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
+import CASION_DEPOSIT from "../../../../public/assets/SVGs/card_deck.svg";
+
 export default function JoinCta() {
   return (
     <section className="relative py-10">
@@ -81,9 +83,9 @@ export default function JoinCta() {
                 <Coin tone="emerald" label="S" size="md" />
               </div>
 
-              <div className="relative mx-auto h-[340px] w-full max-w-[620px]">
+              <div className="relative mx-auto h-[600px] w-full max-w-[620px]">
                 <Image
-                  src="/images/cta/cta-art.png"
+                  src={CASION_DEPOSIT}
                   alt="CTA Artwork"
                   fill
                   className="object-contain drop-shadow-[0_45px_55px_rgba(0,0,0,0.35)]"

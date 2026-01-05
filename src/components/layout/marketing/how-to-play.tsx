@@ -4,6 +4,12 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
+import CARDS from "../../../../public/assets/SVGs/cards.svg";
+import VBLINK from "../../../../public/assets/SVGs/vblink.svg";
+import FIRE_KIRIN from "../../../../public/assets/SVGs/fire_kirin.svg";
+import ULTRA_PANDA from "../../../../public/assets/SVGs/ultra_panda.svg";
+import FORTUNE_KINGS from "../../../../public/assets/SVGs/fortune_kings.svg";
+
 function StepBadge({ n, tone }: { n: number; tone: "green" | "amber" }) {
   return (
     <div className="relative flex flex-col items-center">
@@ -19,9 +25,7 @@ function StepBadge({ n, tone }: { n: number; tone: "green" | "amber" }) {
         <span
           className={cn(
             "text-5xl font-bold",
-            tone === "green"
-              ? "text-emerald-300"
-              : "text-amber-300"
+            tone === "green" ? "text-emerald-300" : "text-amber-300"
           )}
         >
           {n}
@@ -34,7 +38,6 @@ function StepBadge({ n, tone }: { n: number; tone: "green" | "amber" }) {
 export default function HowToPlaySteps() {
   return (
     <section className="relative py-10">
-
       <div className="grid gap-10 md:grid-cols-[1.05fr_1.35fr] md:items-start">
         {/* LEFT: title + illustration */}
         <div className="relative">
@@ -46,15 +49,14 @@ export default function HowToPlaySteps() {
           </h2>
 
           <div className="mt-10 relative w-full max-w-[520px]">
-            {/* If you don't have image yet, keep the placeholder div */}
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur">
-              {/* Replace with Image when you have it */}
+            <div className="relative w-full max-w-[800px] h-[280px] sm:h-[420px] md:h-[560px] lg:h-[1000px] lg:w-[1000px] overflow-hidden backdrop-blur">
               <Image
-                src="/images/howto/illustration.png"
+                src={CARDS}
                 alt="How to play illustration"
                 fill
-                className="object-contain p-6"
+                className="object-contain p-4 sm:p-6 md:p-8"
                 priority={false}
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 800px"
               />
             </div>
           </div>
@@ -135,7 +137,7 @@ export default function HowToPlaySteps() {
                     <div className="flex items-center justify-center rounded-2xl border border-border bg-muted/25 p-6 dark:bg-white/5">
                       <div className="relative h-20 w-full">
                         <Image
-                          src="/images/games/ultra-panda.png"
+                          src={ULTRA_PANDA}
                           alt="Ultra Panda"
                           fill
                           className="object-contain"
@@ -146,7 +148,7 @@ export default function HowToPlaySteps() {
                     <div className="flex items-center justify-center rounded-2xl border border-border bg-muted/25 p-6 dark:bg-white/5">
                       <div className="relative h-20 w-full">
                         <Image
-                          src="/images/games/fortune-kings.png"
+                          src={FORTUNE_KINGS}
                           alt="Fortune Kings"
                           fill
                           className="object-contain"
@@ -178,16 +180,21 @@ export default function HowToPlaySteps() {
                   </p>
 
                   <div className="mt-7 grid grid-cols-3 gap-5">
-                    {["VISA", "MASTERCARD", "CASHAPP", "chime", "PayPal", "COAM"].map(
-                      (x) => (
-                        <div
-                          key={x}
-                          className="grid h-28 place-items-center rounded-2xl border border-border bg-muted/25 text-lg font-semibold text-foreground/90 dark:bg-white/5"
-                        >
-                          {x}
-                        </div>
-                      )
-                    )}
+                    {[
+                      "VISA",
+                      "MASTERCARD",
+                      "CASHAPP",
+                      "chime",
+                      "PayPal",
+                      "COAM",
+                    ].map((x) => (
+                      <div
+                        key={x}
+                        className="grid h-28 place-items-center rounded-2xl border border-border bg-muted/25 text-lg font-semibold text-foreground/90 dark:bg-white/5"
+                      >
+                        {x}
+                      </div>
+                    ))}
                   </div>
 
                   <button

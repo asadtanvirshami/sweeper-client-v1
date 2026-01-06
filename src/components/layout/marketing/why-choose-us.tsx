@@ -1,26 +1,30 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import clock from "../../../../public/assets/SVGs/clock.svg";
+import lock from "../../../../public/assets/SVGs/lock.svg";
+import cash from "../../../../public/assets/SVGs/cash.svg";
+import gold from "../../../../public/assets/SVGs/gold.svg";
 
 const items = [
   {
     title: "Save & Secure",
     desc: "Protected Payments,\ntrusted play",
-    icon: "🔒",
+    icon: lock.src,
   },
   {
     title: "24/7 Support",
     desc: "Protected Payments,\ntrusted play",
-    icon: "⏰",
+    icon: clock.src
   },
   {
     title: "Same Day\nRedemption",
     desc: "Protected Payments,\ntrusted play",
-    icon: "💸",
+    icon: cash.src,
   },
   {
     title: "Loyalty Club",
     desc: "Protected Payments,\ntrusted play",
-    icon: "🪙",
+    icon: gold.src,
   },
 ];
 
@@ -43,8 +47,8 @@ export default function WhyChooseUs() {
             <div className="pointer-events-none absolute inset-0 rounded-3xl bg-[radial-gradient(circle_at_50%_35%,rgba(16,185,129,0.32),transparent_65%)] opacity-70 dark:opacity-90" />
 
             {/* icon floating above */}
-            <div className="absolute -top-8 left-8 text-5xl drop-shadow-[0_18px_25px_rgba(0,0,0,0.35)]">
-              {it.icon}
+            <div className="absolute -top-8 left-25 text-5xl drop-shadow-[0_18px_25px_rgba(0,0,0,0.35)]">
+              <img src={it.icon} alt="image" style={{ width: "80px", height: "80px" }}/>
             </div>
 
             <CardContent className="relative px-10 py-12">

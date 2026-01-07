@@ -2,19 +2,24 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
+import facebook from "../../../../public/assets/SVGs/facebook.svg";
+import instagram from "../../../../public/assets/SVGs/instagram.svg";
+import twitter from "../../../../public/assets/SVGs/twitter.svg";
+import youtube from "../../../../public/assets/SVGs/youtube.svg";
+import telegram from "../../../../public/assets/SVGs/telegram.svg";
 
 type Social = {
   name: string;
-  iconText: string; // using simple letter/icon-like mark to match screenshot
+  icon: string; // using simple letter/icon-like mark to match screenshot
   tone: "facebook" | "instagram" | "x" | "youtube" | "telegram";
 };
 
 const socials: Social[] = [
-  { name: "Facebook", iconText: "f", tone: "facebook" },
-  { name: "Instagram", iconText: "◎", tone: "instagram" },
-  { name: "X", iconText: "X", tone: "x" },
-  { name: "Youtube", iconText: "▶", tone: "youtube" },
-  { name: "Telegram", iconText: "➤", tone: "telegram" },
+  { name: "Facebook", icon: facebook.src, tone: "facebook" },    //"f"
+  { name: "Instagram", icon: instagram.src, tone: "instagram" },  //"◎"
+  { name: "X", icon: twitter.src, tone: "x" }, //"X"
+  { name: "Youtube", icon: youtube.src, tone: "youtube" },  //"▶"
+  { name: "Telegram", icon: telegram.src, tone: "telegram" }, //"➤"
 ];
 
 function barGradient(tone: Social["tone"]) {
@@ -32,20 +37,20 @@ function barGradient(tone: Social["tone"]) {
   }
 }
 
-function iconGradient(tone: Social["tone"]) {
-  switch (tone) {
-    case "facebook":
-      return "bg-gradient-to-b from-sky-500 to-sky-800";
-    case "instagram":
-      return "bg-gradient-to-b from-fuchsia-600 via-pink-600 to-amber-500";
-    case "x":
-      return "bg-gradient-to-b from-zinc-700 to-zinc-950";
-    case "youtube":
-      return "bg-gradient-to-b from-red-500 to-red-800";
-    case "telegram":
-      return "bg-gradient-to-b from-sky-500 to-sky-800";
-  }
-}
+// function iconGradient(tone: Social["tone"]) {
+//   switch (tone) {
+//     case "facebook":
+//       return "bg-gradient-to-b from-sky-500 to-sky-800";
+//     case "instagram":
+//       return "bg-gradient-to-b from-fuchsia-600 via-pink-600 to-amber-500";
+//     case "x":
+//       return "bg-gradient-to-b from-zinc-700 to-zinc-950";
+//     case "youtube":
+//       return "bg-gradient-to-b from-red-500 to-red-800";
+//     case "telegram":
+//       return "bg-gradient-to-b from-sky-500 to-sky-800";
+//   }
+// }
 
 export default function SocialLinks() {
   return (
@@ -95,13 +100,9 @@ export default function SocialLinks() {
                   <div
                     className={cn(
                       "grid h-20 w-20 place-items-center rounded-2xl",
-                      iconGradient(s.tone),
-                      "shadow-[0_25px_45px_rgba(0,0,0,0.35)]"
                     )}
                   >
-                    <span className="text-5xl font-black text-white">
-                      {s.iconText}
-                    </span>
+                    <img src={s.icon} alt={s.name} className="transform translate-x-1 -translate-y-1" />
                   </div>
 
                   <p className="text-2xl font-semibold text-foreground dark:text-white">

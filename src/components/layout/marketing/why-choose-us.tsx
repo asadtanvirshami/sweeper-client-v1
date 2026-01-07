@@ -33,7 +33,7 @@ export default function WhyChooseUs() {
     <section className="relative py-10">
 
       {/* Cards */}
-      <div className="mt-10 grid gap-8 md:grid-cols-4">
+      <div className="mt-10 grid gap-8 sm:grid-cols-2 md:grid-cols-4">
         {items.map((it) => (
           <Card
             key={it.title}

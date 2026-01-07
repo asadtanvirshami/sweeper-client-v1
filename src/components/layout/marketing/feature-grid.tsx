@@ -129,7 +129,7 @@ function GlassCard({
         "shadow-[0_0_0_1px_rgba(0,0,0,0.03)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.06)]",
         "transition-transform duration-200 hover:-translate-y-0.5",
         size === "large"
-          ? "min-h-[260px] md:min-h-[320px]"
+          ? "min-h-[460px] w-full md:min-h-[320px]"
           : "min-h-[170px] md:min-h-[150px]"
       )}
     >
@@ -232,7 +232,7 @@ export default function FeatureGrid() {
   return (
     <section className="grid gap-4 md:grid-cols-12">
       {/* Big left card */}
-      <div className="md:col-span-5">
+      <div className="md:col-span-5 flex justify-center">
         <GlassCard item={big} size="large" />
       </div>
 

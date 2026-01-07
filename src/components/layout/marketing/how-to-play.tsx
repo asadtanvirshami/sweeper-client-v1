@@ -10,6 +10,22 @@ import FIRE_KIRIN from "../../../../public/assets/SVGs/fire_kirin.svg";
 import ULTRA_PANDA from "../../../../public/assets/SVGs/ultra_panda.svg";
 import FORTUNE_KINGS from "../../../../public/assets/SVGs/fortune_kings.svg";
 
+import visa from "../../../../public/assets/SVGs/visa.svg";
+import mastercard from "../../../../public/assets/SVGs/mastercard.svg";
+import s from "../../../../public/assets/SVGs/s.svg";
+import chime from "../../../../public/assets/SVGs/chime.svg";
+import paypal from "../../../../public/assets/SVGs/paypal.svg";
+import coam from "../../../../public/assets/SVGs/coam.svg";
+
+const payments = [
+  { name: "VISA", icon: visa.src },
+  { name: "MASTERCARD", icon: mastercard.src },
+  { name: "S", icon: s.src },
+  { name: "chime", icon: chime.src },
+  { name: "PayPal", icon: paypal.src },
+  { name: "COAM", icon: coam.src },
+]
+
 function StepBadge({ n, tone }: { n: number; tone: "green" | "amber" }) {
   return (
     <div className="relative flex flex-col items-center">
@@ -179,20 +195,13 @@ export default function HowToPlaySteps() {
                     Redeem Your <br /> SC Instantly
                   </p>
 
-                  <div className="mt-7 grid grid-cols-3 gap-5">
-                    {[
-                      "VISA",
-                      "MASTERCARD",
-                      "CASHAPP",
-                      "chime",
-                      "PayPal",
-                      "COAM",
-                    ].map((x) => (
+                  <div className="mt-7 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 gap-5 place-items-center">
+                    {payments.map((icons, i) => (
                       <div
-                        key={x}
-                        className="grid h-28 place-items-center rounded-2xl border border-border bg-muted/25 text-lg font-semibold text-foreground/90 dark:bg-white/5"
+                        key={i}
+                        className="relative grid h-24 w-24 sm:h-28 sm:w-28 md:h-28 md:w-28 place-items-center rounded-2xl border border-border bg-white/10 dark:bg-black/20 backdrop-blur-md"
                       >
-                        {x}
+                        <img src={icons.icon} alt={icons.name} className="h-12 sm:h-12 md:h-14 w-24" />
                       </div>
                     ))}
                   </div>

@@ -1,12 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
-import { Gift, Percent, ShieldCheck, Zap } from "lucide-react";
+import { Gift, Zap, Percent, ShieldCheck } from "lucide-react";
+import handshake from "../../../../public/assets/SVGs/handshake.svg";
+import wallet from "../../../../public/assets/SVGs/wallet.svg";
+import calende from "../../../../public/assets/SVGs/calende.svg";
+import growth from "../../../../public/assets/SVGs/growth.svg";
 
 const perks = [
-  { title: "Referral Bonus", icon: Gift, desc: "Invite friends and earn UC." },
-  { title: "Reload Rewards", icon: Zap, desc: "Boost value on deposits." },
-  { title: "Daily Spins", icon: Percent, desc: "Log in daily for extras." },
-  { title: "VIP Tiers", icon: ShieldCheck, desc: "Higher play unlocks better perks." },
+  { title: "Referral Bonus", icon: handshake.src, desc: "Invite friends and earn UC." },
+  { title: "Reload Rewards", icon: wallet.src, desc: "Boost value on deposits." },
+  { title: "Daily Spins", icon: calende.src, desc: "Log in daily for extras." },
+  { title: "VIP Tiers", icon: growth.src, desc: "Higher play unlocks better perks." },
 ];
 
 export default function Rewards() {
@@ -22,7 +26,7 @@ export default function Rewards() {
         </p>
       </div>
 
-      <div className="mt-10 grid gap-6 md:grid-cols-4">
+      <div className="mt-10 grid gap-6 md:grid-cols-4 items-center text-center">
         {perks.map((p) => (
           <Card
             key={p.title}
@@ -38,10 +42,10 @@ export default function Rewards() {
               <div
                 className={cn(
                   "grid h-12 w-12 place-items-center rounded-2xl",
-                  "border border-border bg-muted/35 dark:bg-white/10"
                 )}
               >
-                <p.icon className="h-6 w-6 text-amber-500 dark:text-amber-300" />
+                {/* <p.icon className="h-6 w-6 text-amber-500 dark:text-amber-300" /> */}
+                <img src={p.icon} alt="p.title" className="h-16 w-16" />
               </div>
 
               <p className="mt-4 text-lg font-semibold text-foreground">

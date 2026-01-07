@@ -7,8 +7,6 @@ export default function Hero() {
   return (
     <section
       className={cn(
-
-
       )}
     >
       {/* Background wash */}
@@ -51,15 +49,7 @@ export default function Hero() {
                   Sign Up & Get
                 </p>
 
-                {/* Bonus pill
-                <div className="mt-4 inline-flex items-center gap-5 rounded-full border border-amber-400/40 bg-black/25 px-6 py-4 shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
-                  <span className="text-2xl font-semibold text-foreground dark:text-white">
-                    $10k Bonus
-                  </span>
-
-                  <Coin tone="amber" label="G" size="md" />
-                </div> */}
-
+                {/* Bonus pill */}
                 <div className="mt-4 inline-flex items-center gap-5 rounded-full p-[1px] bg-gradient-to-b from-amber-400/50 to-black/50">
                   <div className="flex items-center gap-5 rounded-full bg-black/25 px-4 py-2">
                     <span className="text-2xl font-semibold text-foreground dark:text-white">

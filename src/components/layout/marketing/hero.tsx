@@ -1,17 +1,31 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import CASIO_SVG from "../../../../public/assets/SVGs/3d-casino.svg";
+import mascot from "../../../../public/assets/SVGs/mascot.svg";
 
 export default function Hero() {
   return (
     <section
       className={cn(
-    
-       
+
+
       )}
     >
       {/* Background wash */}
-     
+
+      <header className="bg-black flex items-center justify-between px-4 md:px-8 py-3 w-full border rounded-xl">
+        <div className="flex items-center gap-2">
+          <img src={mascot.src} alt="Mascot" className="h-10 w-auto" />
+        </div>
+        <div className="flex items-center gap-4">
+          <button className="bg-yellow-500 text-black font-semibold px-4 py-2 md:px-8 md:py-2 rounded-full hover:bg-yellow-600 transition">
+            Login
+          </button>
+          <button className="bg-yellow-500 text-black font-semibold px-4 py-2 md:px-8 md:py-2 rounded-full hover:bg-yellow-600 transition">
+            Sign up
+          </button>
+        </div>
+      </header>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2 w-full">
         <div className="relative p-6 md:p-10">
           {/* Header */}
@@ -37,14 +51,25 @@ export default function Hero() {
                   Sign Up & Get
                 </p>
 
-                {/* Bonus pill */}
+                {/* Bonus pill
                 <div className="mt-4 inline-flex items-center gap-5 rounded-full border border-amber-400/40 bg-black/25 px-6 py-4 shadow-[0_15px_35px_rgba(0,0,0,0.35)]">
                   <span className="text-2xl font-semibold text-foreground dark:text-white">
                     $10k Bonus
                   </span>
 
                   <Coin tone="amber" label="G" size="md" />
+                </div> */}
+
+                <div className="mt-4 inline-flex items-center gap-5 rounded-full p-[1px] bg-gradient-to-b from-amber-400/50 to-black/50">
+                  <div className="flex items-center gap-5 rounded-full bg-black/25 px-4 py-2">
+                    <span className="text-2xl font-semibold text-foreground dark:text-white">
+                      $10k Bonus
+                    </span>
+                    <Coin tone="amber" label="G" size="md" />
+                  </div>
                 </div>
+
+
               </div>
             </div>
           </div>

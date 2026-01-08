@@ -50,14 +50,14 @@ export default function GameStrip() {
 
       <div
         className={cn(
-          "relative overflow-hidden rounded-3xl border border-border",
-          "bg-card/60 backdrop-blur-xl",
-          "shadow-[0_0_0_1px_rgba(0,0,0,0.03)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
+          "relative overflow-hidden",
+          //  rounded-3xl border border-border "bg-card/60 backdrop-blur-xl",
+          // "shadow-[0_0_0_1px_rgba(0,0,0,0.03)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.06)]"
         )}
       >
         {/* soft background glow like screenshot */}
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(59,130,246,0.20),transparent_45%),radial-gradient(circle_at_85%_30%,rgba(168,85,247,0.20),transparent_45%),radial-gradient(circle_at_55%_70%,rgba(245,158,11,0.18),transparent_55%)] dark:opacity-90 opacity-60" />
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/20 dark:to-black/45" />
+        {/* <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(59,130,246,0.20),transparent_45%),radial-gradient(circle_at_85%_30%,rgba(168,85,247,0.20),transparent_45%),radial-gradient(circle_at_55%_70%,rgba(245,158,11,0.18),transparent_55%)] dark:opacity-90 opacity-60" /> */}
+        {/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-black/0 via-black/0 to-black/20 dark:to-black/45" /> */}
 
         {/* arrows */}
         <Button

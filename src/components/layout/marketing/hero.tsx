@@ -34,7 +34,7 @@ export default function Hero() {
               </p>
 
               {/* bonus pills row (matches screenshot layout) */}
-              <div className="mt-4 flex items-center justify-center gap-3 md:justify-start">
+              <div className="mt-4 flex items-center justify-center gap-2 md:justify-start">
                 <PillLeft />
                 <span className="text-2xl font-extrabold text-white">+</span>
                 <PillRight />
@@ -90,12 +90,12 @@ function PillLeft() {
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-3 rounded-full px-2 py-1",
+        "inline-flex  justify-between items-center rounded-full w-full md:w-[30%] lg:w-[45%] xl:w-[25%] ",
         "border border-amber-400/35 bg-black/35",
         "shadow-[0_18px_45px_rgba(0,0,0,0.45)]"
       )}
     >
-      <span className="text-lg font-extrabold text-amber-300 md:text-xl">
+      <span className="text-[15px] pl-2 font-extrabold text-amber-200 md:text-xl">
         10K GC
       </span>
       <Coin tone="amber" label="G" />
@@ -107,12 +107,12 @@ function PillRight() {
   return (
     <div
       className={cn(
-        "inline-flex items-center gap-3 rounded-full px-3 py-1",
+        "inline-flex  justify-between items-center rounded-full w-full md:w-[30%] lg:w-[45%] xl:w-[25%] ",
         "border border-emerald-400/35 bg-emerald-500/10",
         "shadow-[0_18px_45px_rgba(0,0,0,0.45)]"
       )}
     >
-      <span className="text-lg font-extrabold text-emerald-200 md:text-xl">
+      <span className="text-[15px] pl-2  font-extrabold text-emerald-200 md:text-xl">
         0.20 PTS
       </span>
       <Coin tone="emerald" label="S" />
@@ -124,7 +124,7 @@ function Coin({ tone, label }: { tone: "amber" | "emerald"; label: string }) {
   return (
     <div
       className={cn(
-        "grid h-12 w-12 place-items-center rounded-full",
+        "grid h-10 w-10 place-items-center rounded-full",
         "shadow-[0_25px_55px_rgba(0,0,0,0.45)]",
         tone === "amber"
           ? "bg-gradient-to-b from-amber-300 to-amber-500"

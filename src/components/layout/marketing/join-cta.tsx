@@ -164,12 +164,12 @@ function BonusBox({
   return (
     <div
       className={cn(
-        "relative flex-1 overflow-hidden rounded-2xl border px-4 py-3",
+        "relative flex-1 overflow-hidden rounded-2xl border px-1 w-full p-2",
         "bg-white/5 shadow-[0_12px_40px_rgba(0,0,0,0.35)]",
         tone === "amber" ? "border-amber-300/25" : "border-emerald-400/25"
       )}
     >
-      <div className="flex items-center justify-between gap-3">
+      <div className="flex w-96 md:w-full lg:w-full items-center justify-between gap-3">
         <div>
           <p
             className={cn(

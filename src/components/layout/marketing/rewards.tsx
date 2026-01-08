@@ -31,7 +31,7 @@ export default function Rewards() {
           <Card
             key={p.title}
             className={cn(
-              "relative overflow-hidden rounded-3xl border border-border",
+              "relative overflow-visible rounded-3xl border border-border",
               "bg-card/55 backdrop-blur-xl",
               "shadow-[0_0_0_1px_rgba(255,255,255,0.06)] dark:shadow-[0_0_0_1px_rgba(255,255,255,0.08)]",
               "transition-transform duration-200 hover:-translate-y-0.5"
@@ -41,14 +41,13 @@ export default function Rewards() {
             <CardContent className="relative p-6">
               <div
                 className={cn(
-                  "grid h-12 w-12 place-items-center rounded-2xl",
+                  "absolute grid -top-14 left-26 place-items-center rounded-2xl",
                 )}
               >
-                {/* <p.icon className="h-6 w-6 text-amber-500 dark:text-amber-300" /> */}
-                <img src={p.icon} alt="p.title" className="h-16 w-16" />
+                <img src={p.icon} alt="p.title" className="h-18 w-20" />
               </div>
 
-              <p className="mt-4 text-lg font-semibold text-foreground">
+              <p className="mt-3 text-lg font-semibold text-foreground">
                 {p.title}
               </p>
               <p className="mt-2 text-sm text-muted-foreground dark:text-white/70">

@@ -65,7 +65,7 @@ export default function HowToPlaySteps() {
           </h2>
 
           <div className="mt-10 relative w-full max-w-[520px]">
-            <div className="relative w-full max-w-[800px] h-[280px] sm:h-[420px] md:h-[560px] lg:h-[1000px] lg:w-[1000px] overflow-hidden backdrop-blur">
+            <div className="relative w-full max-w-[800px] h-[280px] sm:h-[420px] md:h-[560px] lg:h-[650px] lg:w-[630px] overflow-hidden backdrop-blur">
               <Image
                 src={CARDS}
                 alt="How to play illustration"

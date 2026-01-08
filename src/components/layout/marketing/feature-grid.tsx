@@ -151,7 +151,7 @@ function GlassCard({
           <div className="flex-col items-center gap-3">
             <div
               className={cn(
-                "relative overflow-hidden ",
+                "relative overflow-hidden",
                 size === "large" ? "h-42 w-42" : "h-12 w-12"
               )}
             >
@@ -165,26 +165,41 @@ function GlassCard({
               />
             </div>
 
-            <div>
+            <div className="flex items-center gap-3">
               <h3
                 className={cn(
                   "font-semibold tracking-tight",
-                  size === "large" ? "text-4xl" : "text-3xl"
+                  size === "large" ? "mt-4 text-4xl" : "text-3xl"
                 )}
               >
                 {item.title}
               </h3>
+
+              {size === "large" && (
+                <Badge
+                  className={cn(
+                    "rounded-xl mt-4 mx-2 px-8 py-2 text-sm font-semibold",
+                    a.pill
+                  )}
+                >
+                  {item.pill}
+                </Badge>
+              )}
             </div>
+
           </div>
 
-          <Badge
-            className={cn(
-              "rounded-full px-4 py-2 text-sm font-semibold",
-              a.pill
-            )}
-          >
-            {item.pill}
-          </Badge>
+          {/* badge on right — only small */}
+          {size === "small" && (
+            <Badge
+              className={cn(
+                "rounded-xl px-4 py-2 text-sm font-semibold",
+                a.pill
+              )}
+            >
+              {item.pill}
+            </Badge>
+          )}
         </div>
 
         {/* desc */}

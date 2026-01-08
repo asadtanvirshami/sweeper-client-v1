@@ -1,117 +1,137 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import CASIO_SVG from "../../../../public/assets/SVGs/3d-casino.svg";
-import mascot from "../../../../public/assets/SVGs/mascot.svg";
 
 export default function Hero() {
   return (
-    <section
-      className={cn(
-      )}
-    >
-      {/* Background wash */}
+    <section className={cn("relative w-full overflow-hidden rounded-3xl")}>
+      {/* ===== DESKTOP: 2 cols | MOBILE: stacked like screenshot ===== */}
+      <div className="relative grid w-full grid-cols-1 md:grid-cols-2">
+        {/* LEFT (copy) */}
+        <div className="relative z-10 p-6 md:p-10">
+          <div className="mx-auto flex w-full max-w-xl flex-col gap-5 text-center md:mx-0 md:max-w-none md:text-left">
+            <p className="text-lg font-semibold tracking-wide text-white/80 md:text-2xl">
+              WELCOME TO
+            </p>
 
-      <header className="bg-black flex items-center justify-between px-4 md:px-8 py-3 w-full border rounded-xl">
-        <div className="flex items-center gap-2">
-          <img src={mascot.src} alt="Mascot" className="h-10 w-auto" />
-        </div>
-        <div className="flex items-center gap-4">
-          <button className="bg-yellow-500 text-black font-semibold px-4 py-2 md:px-8 md:py-2 rounded-full hover:bg-yellow-600 transition">
-            Login
-          </button>
-          <button className="bg-yellow-500 text-black font-semibold px-4 py-2 md:px-8 md:py-2 rounded-full hover:bg-yellow-600 transition">
-            Sign up
-          </button>
-        </div>
-      </header>
-      <div className="grid grid-cols-1 gap-8 md:grid-cols-2 w-full">
-        <div className="relative p-6 md:p-10">
-          {/* Header */}
-          <div className="leading-tight w-full">
-            <p className="text-2xl text-muted-foreground dark:text-white/70">
-              Welcome to
+            <div className="leading-[0.92]">
+              <p className="text-5xl font-extrabold tracking-tight text-lime-400 md:text-7xl">
+                UC Sweep
+              </p>
+            </div>
+
+            <p className="mx-auto max-w-lg text-base leading-relaxed text-white/70 md:mx-0 md:text-lg">
+              Your favorite slots, fish tables, and live games – all in one
+              place. Play for free, and win real cash prizes!
             </p>
-            <p className="text-7xl font-bold tracking-tight text-foreground dark:text-white">
-              GAME VAULT
-            </p>
-            <p className="text-7xl font-extrabold tracking-tight text-amber-400 dark:text-amber-300">
-              UC SWEEP
-            </p>
-            {/* LEFT COPY */}
-            <div>
-              <p className="max-w-md text-xl leading-relaxed text-muted-foreground dark:text-white/75">
-                Your favorite slots, fish tables, and live games – all in one
-                place. Play for free, and win real cash prizes!
+
+            {/* divider line (mobile screenshot) */}
+            <div className="mx-auto mt-2 h-px w-full max-w-lg  md:mx-0 md:max-w-xl" />
+
+            <div className="mt-2">
+              <p className="text-xl font-semibold text-white md:text-2xl">
+                Sign Up &amp; Get
               </p>
 
-              <div className="mt-10">
-                <p className="text-xl font-semibold text-foreground dark:text-white">
-                  Sign Up & Get
-                </p>
-
-                {/* Bonus pill */}
-                <div className="mt-4 inline-flex items-center gap-5 rounded-full p-[1px] bg-gradient-to-b from-amber-400/50 to-black/50">
-                  <div className="flex items-center gap-5 rounded-full bg-black/25 px-4 py-2">
-                    <span className="text-2xl font-semibold text-foreground dark:text-white">
-                      $10k Bonus
-                    </span>
-                    <Coin tone="amber" label="G" size="md" />
-                  </div>
-                </div>
-
-
+              {/* bonus pills row (matches screenshot layout) */}
+              <div className="mt-4 flex items-center justify-center gap-3 md:justify-start">
+                <PillLeft />
+                <span className="text-2xl font-extrabold text-white">+</span>
+                <PillRight />
               </div>
+
+              <button
+                type="button"
+                className={cn(
+                  "mt-6 inline-flex items-center justify-center rounded-full px-10 py-4",
+                  "bg-lime-400 text-black font-extrabold tracking-wide",
+                  "shadow-[0_22px_55px_rgba(0,0,0,0.45)]",
+                  "hover:bg-lime-300 transition"
+                )}
+              >
+                CLAIM FREE COINS
+              </button>
             </div>
           </div>
         </div>
-        {/* RIGHT VISUAL */}
+
+        {/* RIGHT (visual) */}
         <div className="relative">
-          <div className="relative mx-auto h-[280px] w-full  md:h-[660px]">
+          {/* desktop hero art area */}
+          <div className="relative hidden h-[660px] w-full md:block">
             <Image
               src={CASIO_SVG}
-              alt="Cards & Chips"
+              alt="UC Sweeper"
               fill
-              className="object-contain drop-shadow-[0_45px_60px_rgba(0,0,0,0.45)]"
+              priority
+              className="object-cover object-center drop-shadow-[0_45px_60px_rgba(0,0,0,0.45)]"
             />
           </div>
 
-          {/* Ambient glows */}
-          <div className="pointer-events-none absolute -right-10 -top-10 hidden h-56 w-56 rounded-full bg-amber-400/10 blur-3xl md:block" />
-          <div className="pointer-events-none absolute -left-10 -bottom-10 hidden h-56 w-56 rounded-full bg-emerald-400/10 blur-3xl md:block" />
+          {/* MOBILE: image goes to bottom like screenshot */}
+          <div className="relative mt-6 h-[320px] w-full md:hidden">
+            <Image
+              src={CASIO_SVG}
+              alt="UC Sweeper"
+              fill
+              priority
+              className="object-cover object-bottom drop-shadow-[0_45px_60px_rgba(0,0,0,0.45)]"
+            />
+          </div>
         </div>
       </div>
     </section>
   );
 }
 
-function Coin({
-  tone,
-  label,
-  size,
-}: {
-  tone: "amber" | "emerald";
-  label: string;
-  size: "md" | "sm";
-}) {
-  const dims = size === "md" ? "h-14 w-14" : "h-12 w-12";
-  const inner = size === "md" ? "h-10 w-10 text-2xl" : "h-9 w-9 text-xl";
+/** ===== Pills exactly like screenshot ===== */
 
+function PillLeft() {
   return (
     <div
       className={cn(
-        "grid place-items-center rounded-full shadow-[0_25px_55px_rgba(0,0,0,0.45)]",
-        dims,
+        "inline-flex items-center gap-3 rounded-full px-2 py-1",
+        "border border-amber-400/35 bg-black/35",
+        "shadow-[0_18px_45px_rgba(0,0,0,0.45)]"
+      )}
+    >
+      <span className="text-lg font-extrabold text-amber-300 md:text-xl">
+        10K GC
+      </span>
+      <Coin tone="amber" label="G" />
+    </div>
+  );
+}
+
+function PillRight() {
+  return (
+    <div
+      className={cn(
+        "inline-flex items-center gap-3 rounded-full px-3 py-1",
+        "border border-emerald-400/35 bg-emerald-500/10",
+        "shadow-[0_18px_45px_rgba(0,0,0,0.45)]"
+      )}
+    >
+      <span className="text-lg font-extrabold text-emerald-200 md:text-xl">
+        0.20 PTS
+      </span>
+      <Coin tone="emerald" label="S" />
+    </div>
+  );
+}
+
+function Coin({ tone, label }: { tone: "amber" | "emerald"; label: string }) {
+  return (
+    <div
+      className={cn(
+        "grid h-12 w-12 place-items-center rounded-full",
+        "shadow-[0_25px_55px_rgba(0,0,0,0.45)]",
         tone === "amber"
           ? "bg-gradient-to-b from-amber-300 to-amber-500"
           : "bg-gradient-to-b from-emerald-400 to-emerald-600"
       )}
     >
-      <div
-        className={cn(
-          "grid place-items-center rounded-full bg-background/90 font-black text-foreground shadow-inner",
-          inner
-        )}
-      >
+      <div className="grid h-9 w-9 place-items-center rounded-full bg-white/90 text-xl font-black text-black shadow-inner">
         {label}
       </div>
     </div>

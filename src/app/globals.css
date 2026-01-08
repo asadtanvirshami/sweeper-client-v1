@@ -10,6 +10,31 @@
   color-scheme: dark;
 }
 
+/* Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(16, 185, 129, 0.6); /* emerald */
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(16, 185, 129, 0.85);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(16,185,129,0.6) rgba(255,255,255,0.08);
+}
+
+
 .bg-grid {
   background-image:
     radial-gradient(ellipse at top, rgba(255, 193, 7, 0.18), transparent 55%),

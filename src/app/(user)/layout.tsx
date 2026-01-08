@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // import TestPanel from "@/components/common/test-panel"; //(only dev)
 import React, { memo } from "react";
 

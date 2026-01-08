@@ -1,5 +1,6 @@
 import Container from "@/components/common/container";
 import Footer from "@/components/common/footer";
+import Header from "@/components/common/header";
 import GradientShell from "@/components/layout/gradient-scroll";
 import FeatureGrid from "@/components/layout/marketing/feature-grid";
 import GameStrip from "@/components/layout/marketing/game-strip";
@@ -17,6 +18,8 @@ export default function Page() {
     <GradientShell>
       <main className="w-full bg-transparent">
         <Container className="py-6 bg-transparent">
+          <Header />
+          <div className="mt-10" />
           <Hero />
           <div className="mt-10" />
           <FeatureGrid />

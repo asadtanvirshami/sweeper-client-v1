@@ -7,6 +7,8 @@ import { ChevronDown, Mail, MessageSquare, Phone, Handshake } from "lucide-react
 const leftLinks = ["Contact Hub", "Affiliates", "AML/CTF Policy", "Responsible Gaming"];
 const rightLinks = ["Promo Rules", "Privacy Policy", "Terms & Conditions", "Help Center"];
 
+import LOGO from "../../../public/assets/SVGs/logo.svg";
+
 export default function Footer() {
   return (
     <footer className="relative mt-16 pb-16">
@@ -22,10 +24,10 @@ export default function Footer() {
             <div className="relative h-16 w-24">
               {/* If you have your logo, put it in public/images/brand/logo.png */}
               <Image
-                src="/images/brand/logo.png"
+                src={LOGO}
                 alt="UCSWEEPS"
                 fill
-                className="object-contain"
+                className="object-contain rounded-full"
                 priority={false}
               />
             </div>

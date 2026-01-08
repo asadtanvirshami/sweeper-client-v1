@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { ChevronDown, Mail, MessageSquare, Phone, Handshake } from "lucide-react";
+import mascot from "../../../public/assets/SVGs/mascot.svg"
 
 const leftLinks = ["Contact Hub", "Affiliates", "AML/CTF Policy", "Responsible Gaming"];
 const rightLinks = ["Promo Rules", "Privacy Policy", "Terms & Conditions", "Help Center"];
@@ -19,10 +20,10 @@ export default function Footer() {
           {/* Logo */}
           <div className="flex items-start gap-4">
             {/* Replace with your real logo file */}
-            <div className="relative h-16 w-24">
+            <div className="relative ml-2 h-35 w-35 -mb-6 -mt-9">
               {/* If you have your logo, put it in public/images/brand/logo.png */}
               <Image
-                src="/images/brand/logo.png"
+                src={mascot.src}              // "/images/brand/logo.png"
                 alt="UCSWEEPS"
                 fill
                 className="object-contain"

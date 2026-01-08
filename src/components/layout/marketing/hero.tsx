@@ -2,6 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import CASIO_SVG from "../../../../public/assets/SVGs/3d-casino.svg";
 import mascot from "../../../../public/assets/SVGs/mascot.svg";
+import goldCoin from "../../../../public/assets/SVGs/goldCoin.svg";
 
 export default function Hero() {
   return (
@@ -50,15 +51,15 @@ export default function Hero() {
                 </p>
 
                 {/* Bonus pill */}
-                <div className="mt-4 inline-flex items-center gap-5 rounded-full p-[1px] bg-gradient-to-b from-amber-400/50 to-black/50">
-                  <div className="flex items-center gap-5 rounded-full bg-black/25 px-4 py-2">
+                <div className="mt-4 inline-flex items-center overflow-visible gap-5 rounded-full p-[1px] bg-gradient-to-b from-amber-400/50 to-black/50">
+                  <div className="flex items-center gap-5 rounded-full bg-black/25 px-4 py-2 h-14">
                     <span className="text-2xl font-semibold text-foreground dark:text-white">
                       $10k Bonus
                     </span>
-                    <Coin tone="amber" label="G" size="md" />
+                    
+                    <img src={goldCoin.src} alt="Gold Coin" className="h-16 w-16 -mr-5"/>
                   </div>
                 </div>
-
 
               </div>
             </div>

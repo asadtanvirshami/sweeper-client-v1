@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Game Vault — UC Sweep",
+  title: "UC Sweep",
   description: "Play for fun or real prizes",
 };
 

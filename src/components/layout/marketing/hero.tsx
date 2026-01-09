@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import CASIO_SVG from "../../../../public/assets/SVGs/3d-casino.svg";
+import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -29,10 +30,6 @@ export default function Hero() {
             <div className="mx-auto mt-2 h-px w-full max-w-lg  md:mx-0 md:max-w-xl" />
 
             <div className="mt-2">
-              <p className="text-xl font-semibold text-white md:text-2xl">
-                Sign Up &amp; Get
-              </p>
-
               {/* bonus pills row (matches screenshot layout) */}
               <div className="mt-4 flex items-center justify-center gap-2 md:justify-start">
                 <PillLeft />
@@ -47,7 +44,7 @@ export default function Hero() {
                   "hover:bg-emerald-300 transition"
                 )}
               >
-                CLAIM FREE COINS
+                <Link href="/auth/signup">Sign Up Now</Link>
               </button>
             </div>
           </div>
@@ -94,7 +91,7 @@ function PillLeft() {
       )}
     >
       <span className="text-[15px] pl-2 font-extrabold text-amber-200 md:text-xl">
-        10K GC Bonus
+        $10 Bonus
       </span>
       <Coin tone="amber" label="G" />
     </div>

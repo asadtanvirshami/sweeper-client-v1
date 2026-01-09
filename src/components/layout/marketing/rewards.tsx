@@ -19,7 +19,7 @@ export default function Rewards() {
       {/* heading (exact line break behavior like screenshots) */}
       <div className="text-center">
         <h2 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
-          <span className="text-lime-400">Earn Rewards</span>
+          <span className="text-emerald-400">Earn Rewards</span>
           <span className="text-white"> as You Play</span>
         </h2>
       </div>

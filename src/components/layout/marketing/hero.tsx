@@ -15,7 +15,7 @@ export default function Hero() {
             </p>
 
             <div className="leading-[0.92]">
-              <p className="text-5xl font-extrabold tracking-tight text-lime-400 md:text-7xl">
+              <p className="text-5xl font-extrabold tracking-tight text-emerald-400 md:text-7xl">
                 UC Sweep
               </p>
             </div>
@@ -36,17 +36,15 @@ export default function Hero() {
               {/* bonus pills row (matches screenshot layout) */}
               <div className="mt-4 flex items-center justify-center gap-2 md:justify-start">
                 <PillLeft />
-                <span className="text-2xl font-extrabold text-white">+</span>
-                <PillRight />
               </div>
 
               <button
                 type="button"
                 className={cn(
                   "mt-6 inline-flex items-center justify-center rounded-full px-10 py-4",
-                  "bg-lime-400 text-black font-extrabold tracking-wide",
+                  "bg-emerald-400 text-black font-extrabold tracking-wide",
                   "shadow-[0_22px_55px_rgba(0,0,0,0.45)]",
-                  "hover:bg-lime-300 transition"
+                  "hover:bg-emerald-300 transition"
                 )}
               >
                 CLAIM FREE COINS
@@ -90,13 +88,13 @@ function PillLeft() {
   return (
     <div
       className={cn(
-        "inline-flex  justify-between items-center rounded-full w-full md:w-[30%] lg:w-[45%] xl:w-[25%] ",
+        "inline-flex  justify-between items-center rounded-full w-[70%] md:w-[35%] lg:w-[48%] xl:w-[35%] ",
         "border border-amber-400/35 bg-black/35",
         "shadow-[0_18px_45px_rgba(0,0,0,0.45)]"
       )}
     >
       <span className="text-[15px] pl-2 font-extrabold text-amber-200 md:text-xl">
-        10K GC
+        10K GC Bonus
       </span>
       <Coin tone="amber" label="G" />
     </div>

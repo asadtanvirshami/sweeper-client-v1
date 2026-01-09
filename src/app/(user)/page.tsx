@@ -28,8 +28,6 @@ export default function Page() {
           <div className="mt-10" />
           <WhyChooseUs />
           <div className="mt-10" />
-          <Payments />
-          <div className="mt-10" />
           <HowToPlay />
           <div className="mt-10" />
           <Rewards />

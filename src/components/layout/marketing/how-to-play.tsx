@@ -32,13 +32,7 @@ function StepNum({ n }: { n: number }) {
   );
 }
 
-function StepCard({
-  n,
-  children,
-}: {
-  n: number;
-  children: React.ReactNode;
-}) {
+function StepCard({ n, children }: { n: number; children: React.ReactNode }) {
   return (
     <div className="relative">
       {/* number pinned to top-left like screenshot */}
@@ -52,7 +46,6 @@ function StepCard({
           "bg-transparent shadow-[0_18px_55px_rgba(0,0,0,0.45)]"
         )}
       >
-        
         <CardContent className="relative p-6">{children}</CardContent>
       </Card>
     </div>
@@ -68,8 +61,7 @@ export default function HowToPlaySteps() {
           {/* LEFT */}
           <div className="relative">
             <h2 className="text-3xl font-extrabold leading-tight text-white sm:text-4xl">
-              How to play in{" "}
-              <span className="text-lime-400">3 Easy Steps</span>
+              How to play in <span className="text-emerald-400">3 Easy Steps</span>
             </h2>
 
             <div className="relative mt-6 w-full">
@@ -100,7 +92,7 @@ export default function HowToPlaySteps() {
                 <div className="mt-4 space-y-3">
                   <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
                     <div className="text-sm font-bold text-amber-200">
-                      10,000 gold coins (GC)
+                      $10 Signup bonus
                     </div>
                     <div className="grid h-9 w-9 place-items-center rounded-full bg-amber-400 text-black font-black">
                       G
@@ -109,13 +101,13 @@ export default function HowToPlaySteps() {
 
                   <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
                     <div className="text-sm font-bold text-emerald-200">
-                      0.20 points (Pts)
+                      $10 Referal Bonus
                     </div>
                     <div className="grid h-9 w-9 place-items-center rounded-full bg-emerald-500 text-black font-black">
                       S
                     </div>
                   </div>
-
+{/* 
                   <div className="flex items-center justify-between rounded-xl bg-white/5 px-4 py-3">
                     <div className="text-sm font-bold text-fuchsia-200">
                       + 333% bonus on 1st purchase
@@ -123,12 +115,12 @@ export default function HowToPlaySteps() {
                     <div className="grid h-9 w-9 place-items-center rounded-full bg-fuchsia-500 text-black font-black">
                       %
                     </div>
-                  </div>
+                  </div> */}
                 </div>
 
                 <button
                   type="button"
-                  className="mt-5 w-full rounded-full bg-lime-400 py-3 text-sm font-extrabold text-black hover:bg-lime-300 transition"
+                  className="mt-5 w-full rounded-full bg-emerald-400 py-3 text-sm font-extrabold text-black hover:bg-lime-300 transition"
                 >
                   CLAIM
                 </button>
@@ -136,17 +128,15 @@ export default function HowToPlaySteps() {
 
               {/* STEP 2 */}
               <StepCard n={2}>
-                <p className="text-lg font-extrabold text-white leading-tight">
-                  Play Slots, Fish Tables, and More!
-                </p>
-                <p className="mt-2 text-sm text-white/70">
-                  Use Gold Coins for fun or Points to win real cash prizes.
-                </p>
-
                 <div className="mt-4 grid grid-cols-2 gap-4">
                   <div className="relative flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-5">
                     <div className="relative h-12 w-full">
-                      <Image src={ULTRA_PANDA} alt="Ultra Panda" fill className="object-contain" />
+                      <Image
+                        src={ULTRA_PANDA}
+                        alt="Ultra Panda"
+                        fill
+                        className="object-contain"
+                      />
                     </div>
                   </div>
                   <div className="relative flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 p-5">
@@ -165,7 +155,7 @@ export default function HowToPlaySteps() {
               {/* STEP 3 */}
               <StepCard n={3}>
                 <p className="text-lg font-extrabold text-white leading-tight">
-                  Redeem Your <br className="hidden sm:block" /> Pts Instantly
+                  Redeem Instantly
                 </p>
                 <p className="mt-2 text-sm text-white/70">
                   To your Debit Card, Bank, or Gift Cards.
@@ -184,7 +174,7 @@ export default function HowToPlaySteps() {
 
                 <button
                   type="button"
-                  className="mt-5 w-full rounded-full bg-lime-400 py-3 text-sm font-extrabold text-black hover:bg-lime-300 transition"
+                  className="mt-5 w-full rounded-full bg-emerald-400 py-3 text-sm font-extrabold text-black hover:bg-lime-300 transition"
                 >
                   REDEEM
                 </button>

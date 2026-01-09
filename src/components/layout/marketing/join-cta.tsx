@@ -54,15 +54,15 @@ export default function JoinCta() {
               <div className="mt-5 flex items-center gap-3">
                 <BonusBox
                   tone="amber"
-                  big="10,000"
-                  small="GOLD COINS (GC)"
+                  big="$10"
+                  small="Sign Up"
                   coin="G"
                 />
                 <span className="text-xl font-extrabold text-white/80">+</span>
                 <BonusBox
                   tone="emerald"
-                  big="0.20 PTS"
-                  small="POINTS (PTS)"
+                  big="$10"
+                  small="Refferal Bonus"
                   coin="S"
                 />
               </div>
@@ -70,9 +70,9 @@ export default function JoinCta() {
               {/* CTA button */}
               <button
                 type="button"
-                className="mt-6 w-full rounded-full bg-lime-400 py-4 text-base font-extrabold tracking-wide text-black hover:bg-lime-300 transition"
+                className="mt-6 w-full rounded-full bg-emerald-400 py-4 text-base font-extrabold tracking-wide text-black hover:bg-lime-300 transition"
               >
-                PLAY NOW – IT&apos;S FREE
+                PLAY NOW
               </button>
 
               {/* footer note */}

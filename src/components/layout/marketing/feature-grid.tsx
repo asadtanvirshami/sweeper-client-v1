@@ -142,7 +142,7 @@ function FeatureCard({
 
           <button
             type="button"
-            className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-lime-400 px-8 py-3 text-sm font-extrabold tracking-wide text-black shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition hover:bg-lime-300"
+            className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-emerald-400 px-8 py-3 text-sm font-extrabold tracking-wide text-black shadow-[0_18px_45px_rgba(0,0,0,0.35)] transition hover:bg-emerald-300"
           >
             {item.cta}
           </button>
